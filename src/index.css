@@ -1,0 +1,100 @@
+/* src/index.css - ULTIMATE GLOBAL STYLING (VERSI LENGKAP) */
+
+/* 1. Import Wajib Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Global Styling Dasar */
+
+/* Mengatur Font Global */
+:root {
+  /* Menggunakan Inter, fallback ke Tailwind default sans-serif */
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Mengatur Scroll Behavior Smooth (Efek Paling Penting untuk Navigasi) */
+html {
+  /* Ini yang membuat scroll ke #sectionID menjadi mulus/smooth */
+  scroll-behavior: smooth;
+  /* Membuat semua transisi gaya menjadi halus */
+  @apply antialiased text-gray-800;
+}
+
+/* 3. Custom Utility untuk Efek */
+
+/* Utilitas untuk Box Shadow Hijau (Cocok untuk elemen Kuis atau highlight) */
+.shadow-green-md {
+  box-shadow: 0 4px 6px -1px rgba(34, 139, 34, 0.1), 0 2px 4px -2px rgba(34, 139, 34, 0.06);
+}
+
+/* Utilitas untuk Link Navigasi */
+.nav-link {
+  @apply px-3 py-2 rounded-md text-sm font-medium transition duration-300;
+}
+
+/* 4. Scrollbar Styling (Khusus Webkit/Chrome) */
+/* Membuat scrollbar lebih tipis dan bersih */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* 5. Styling untuk Section ID (Memastikan Link Navigasi Bekerja) */
+/* Memberi padding atas pada setiap section untuk mengakomodasi Navbar yang sticky/fixed */
+section[id] {
+  /* Memberi margin atas negatif sebesar tinggi navbar (64px) + padding 1rem */
+  scroll-margin-top: 6rem; /* Sekitar 96px */
+}
+
+
+/* === 6. KEYFRAMES ANIMASI (TAMBAHAN DARI KOMPONEN JSX) === */
+
+/* Keyframes untuk Efek Cursor Berkedip (Hero.jsx) */
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Keyframes untuk Animasi Detail Tokoh (TokohSection.jsx) */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Keyframes untuk Transisi Quote (QuotesSection.jsx) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
