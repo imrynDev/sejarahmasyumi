@@ -15,7 +15,7 @@ import CounterSection from './CounterSection.jsx';
 import TokohSection from './TokohSection.jsx';
 import VisiMisi from './VisiMisi.jsx';
 import AliansiPolitik from './AliansiPolitik.jsx';
-import WarisanSection from './WarisanSection.jsx';
+import WarisanSection from './DokumentasiSection.jsx';
 import PembubaranSection from './PembubaranSection.jsx';
 import QuizGame from './QuizGame.jsx'; 
 

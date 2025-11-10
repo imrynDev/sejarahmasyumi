@@ -1,16 +1,20 @@
+// tailwind.config.js
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", 
+    // Ini memberitahu Tailwind untuk memindai semua file .html di root
+    "./index.html", 
+    
+    // Ini memberitahu Tailwind untuk memindai semua file .js, .jsx, .ts, .tsx
+    // yang berada di dalam folder src/ dan sub-foldernya.
+    "./src/**/*.{js,jsx,ts,tsx}", 
   ],
   theme: {
     extend: {
-      fontFamily: {
-        // Menggunakan Poppins untuk semua teks dan judul
-        sans: ['Poppins', 'sans-serif'],
-        serif: ['Poppins', 'sans-serif'], 
-      },
+      // Pastikan animasi fade-in Anda ada di sini (jika menggunakan kode sebelumnya)
+      // keyframes: { ... }, 
+      // animation: { ... }
     },
   },
   plugins: [],

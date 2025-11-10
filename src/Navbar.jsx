@@ -6,11 +6,13 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 const navLinks = [
     // Tambahkan properti 'isActive' untuk tombol Beranda
     { name: "Beranda", href: "#beranda", isActive: true }, 
-    { name: "Sejarah", href: "#warisan", isActive: false },
+    { name: "Warisan", href: "#warisan", isActive: false },
+    { name: "Statistik", href: "#statistik", isActive: false },
     { name: "Tokoh", href: "#tokoh", isActive: false },
     { name: "Kutipan", href: "#kutipan", isActive: false },
     { name: "Visi & Misi", href: "#visimisi", isActive: false },
     { name: "Aliansi Politik", href: "#aliansipolitik", isActive: false },
+    { name: "Arsip", href: "#dokumentasi", isActive: false },
     { name: "Pembubaran", href: "#pembubaran", isActive: false },
     { name: "Kuis", href: "#kuis", isActive: false },
 ];
