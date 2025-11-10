@@ -1,8 +1,8 @@
-// src/QuizGame.jsx - Kuis Sejarah Masyumi (20 Soal)
+// src/QuizGame.jsx - Kuis Sejarah Masyumi (10 Soal)
 
 import React, { useState } from 'react';
 
-// Data Pertanyaan Kuis (Total 20 Soal)
+// Data Pertanyaan Kuis (Diambil 10 Soal Pertama)
 const quizQuestions = [
     {
         question: "Apa kepanjangan resmi dari Masyumi?",
@@ -103,106 +103,6 @@ const quizQuestions = [
             "1965"
         ],
         answerIndex: 1
-    },
-    {
-        question: "Salah satu pilar perjuangan Masyumi di Konstituante (1956-1959) adalah memperjuangkan...",
-        options: [
-            "Sistem Ekonomi Sosialis",
-            "Pembentukan Negara Bagian",
-            "Penerapan Syariat Islam sebagai Dasar Negara",
-            "Penghapusan Hak Pilih"
-        ],
-        answerIndex: 2
-    },
-    {
-        question: "Siapa tokoh Masyumi yang memimpin Pemerintahan Revolusioner Republik Indonesia (PRRI) di Sumatera?",
-        options: [
-            "Mohammad Natsir",
-            "Mohammad Roem",
-            "Syafruddin Prawiranegara",
-            "M. Isa Anshary"
-        ],
-        answerIndex: 2
-    },
-    {
-        question: "Sebelum menjadi partai politik, Masyumi adalah wadah pemersatu organisasi-organisasi Islam. Organisasi besar mana yang menjadi tulang punggung pendiriannya?",
-        options: [
-            "Sarekat Islam dan Perti",
-            "Muhammadiyah dan Nahdlatul Ulama (NU)",
-            "Persis dan Al-Irsyad",
-            "Jamiatul Khair dan Persatuan Islam"
-        ],
-        answerIndex: 1
-    },
-    {
-        question: "Apa nama kabinet di mana Moh. Natsir menjabat sebagai Perdana Menteri?",
-        options: [
-            "Kabinet Wilopo",
-            "Kabinet Natsir",
-            "Kabinet Ali Sastroamidjojo",
-            "Kabinet Djuanda"
-        ],
-        answerIndex: 1
-    },
-    {
-        question: "Tokoh Masyumi yang terkenal sebagai diplomat ulung dan terlibat dalam perundingan Room-Roijen adalah...",
-        options: [
-            "Mohammad Hatta",
-            "Mohammad Roem",
-            "Mohammad Natsir",
-            "Burhanuddin Harahap"
-        ],
-        answerIndex: 1
-    },
-    {
-        question: "Pembubaran Masyumi di tahun 1960 dilakukan melalui Keputusan Presiden No....",
-        options: [
-            "100 Tahun 1960",
-            "200 Tahun 1960",
-            "300 Tahun 1960",
-            "400 Tahun 1960"
-        ],
-        answerIndex: 2
-    },
-    {
-        question: "Masyumi sangat menjunjung tinggi etika dan moral dalam berpolitik. Salah satu visinya adalah mewujudkan masyarakat yang adil dan makmur berdasarkan...",
-        options: [
-            "Sosialisme",
-            "Pancasila",
-            "Demokrasi Barat",
-            "Prinsip Islam"
-        ],
-        answerIndex: 3
-    },
-    {
-        question: "Perdebatan panjang mengenai Dasar Negara di Konstituante (1956-1959) berakhir tanpa kesepakatan, yang kemudian memicu...",
-        options: [
-            "Pembentukan Komite Nasional",
-            "Konferensi Meja Bundar",
-            "Dekrit Presiden 5 Juli 1959",
-            "Pemilu Kedua"
-        ],
-        answerIndex: 2
-    },
-    {
-        question: "Di periode apa, Moh. Natsir menjabat sebagai Perdana Menteri Indonesia?",
-        options: [
-            "Demokrasi Terpimpin",
-            "Demokrasi Liberal",
-            "Orde Lama",
-            "Orde Baru"
-        ],
-        answerIndex: 1
-    },
-    {
-        question: "Tokoh Masyumi yang dikenal sebagai 'Bapak Pendidikan Indonesia' karena kontribusinya dalam dunia pendidikan adalah...",
-        options: [
-            "Ki Hajar Dewantara",
-            "Mohammad Natsir",
-            "M. Natsir",
-            "Dr. Soemitro Djojohadikusumo"
-        ],
-        answerIndex: 1
     }
 ];
 
@@ -211,11 +111,11 @@ const QuizGame = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [showResults, setShowResults] = useState(false);
+    // Inisialisasi userAnswers dengan jumlah soal yang baru (10 soal)
     const [userAnswers, setUserAnswers] = useState(Array(quizQuestions.length).fill(null));
 
     // Handler ketika pengguna memilih opsi jawaban
     const handleAnswerClick = (selectedIndex) => {
-        const currentQuestion = quizQuestions[currentQuestionIndex];
         const newAnswers = [...userAnswers];
         newAnswers[currentQuestionIndex] = selectedIndex;
         setUserAnswers(newAnswers);
@@ -263,9 +163,10 @@ const QuizGame = () => {
                     </p>
                     <div className="bg-white p-6 shadow-xl rounded-lg border-t-4 border-green-700 mb-8">
                         <p className="text-xl font-semibold mb-4 text-green-800">Evaluasi</p>
-                        {score >= 15 ? (
+                        {/* Logic Evaluasi Disesuaikan untuk 10 Soal: 8-10 Sangat Bagus, 5-7 Bagus */}
+                        {score >= 8 ? (
                             <p className="text-gray-600">Selamat! Pengetahuan Anda tentang sejarah Masyumi sangat luar biasa. Anda pasti seorang peneliti sejarah yang gigih!</p>
-                        ) : score >= 10 ? (
+                        ) : score >= 5 ? (
                             <p className="text-gray-600">Bagus! Anda memiliki pemahaman yang solid. Terus eksplorasi agar pengetahuan Anda makin mendalam.</p>
                         ) : (
                             <p className="text-gray-600">Jangan berkecil hati! Ini adalah waktu yang tepat untuk membaca kembali sejarah dan tokoh-tokoh besar Masyumi.</p>
@@ -375,4 +276,4 @@ const QuizGame = () => {
     );
 };
 
-export default QuizGame;
+export default QuizGame;    

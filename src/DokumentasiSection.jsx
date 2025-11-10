@@ -40,7 +40,7 @@ const DokumentasiSection = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     
     // GANTI LINK INI dengan URL video dokumenter/tur virtual Masyumi Anda
-    const virtualTourLink = "https://www.youtube.com/watch?v=contoh_link_video_sejarah_masyumi";
+    const virtualTourLink = "https://youtu.be/V03jeSKfNT0?si=yaMEiow5Mg66__eK";
 
     return (
         <section id="dokumentasi" className="py-20 bg-white font-sans">
@@ -102,7 +102,7 @@ const DokumentasiSection = () => {
                     <div className="mt-6 text-center">
                          <a 
                             href={virtualTourLink} 
-                                target="https://youtu.be/n7BLjXAY9ZA?si=swPZcYwYAQDh766u"
+                                target="https://youtu.be/V03jeSKfNT0?si=d1LKGjNXlKZgyJOQ"
                                 rel="noopener noreferrer"
                             className="inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition duration-300"
                         >
